@@ -1,0 +1,56 @@
+
+Functional Interfaces provide target types for lambda expressions and method references. Each functional interfaces
+has a single abstract method, called the functional method for that functional interface, to which the lambda expressions
+parameter and return types are matched or adapted. Functional interfaces can provide a target type in multiple contexts
+such as assignment context, method invocation or cast context:
+
+//Assignment context
+Predicate<String> p = String::isEmpty;
+
+//Method invocation context
+stream.filter(e->e.getSize() > 10);
+
+//cast context
+stream.map((ToIntFunction) e -> e.getSize())
+
+
+BIFUNCTION INTERFACE IN JAVA
+
+In Java 8, BiFunction interface is a built in functional interface which accepts two arguments and produces a results. This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.
+
+Java BiFunction is common use case when we are working with Java HashMap. In HashMap methods compute, computeIfPresent, merge and replaceAll method takes BiFunction as input argument.
+
+
+Consumer Interface
+Represents an operation that accepts a single input argument and returns no result.
+
+BiConsumer Interface in Java
+Represents an operation that accepts a two arguments and returns no result.
+
+Predicate Interface
+Predicate<T> Represents a predicate (boolean-valued function) of one argument.
+
+
+BiPredicate Interface
+BiPredicate<T,U> Represents a predicate (boolean-valued function) of two argument.
+
+
+Supplier Interface
+Supplier<T> Represents a supplier of results.
+Supplier functions returns any kind of value that you want.
+
+
+COMBINATOR DESIGN PATTERN
+A combinator is a function that can take other functions as an argument. There by chaining multiple functions to a particular operation.
+
+
+Pure Functional programming has a set of rules to follow
+
+It should only depend on the state u define inside it. That is, dont change a variable outside a functional interface within the functional method.
+You are only allowed to define a variable within the functional method and change variables you define within it.
+
+Functions should not have side effects out side the function. ie. Function must not change any variable defined outside it.
+
+Higher Order Functions
+The function takes one or more functions as parameters
+The function returns another function as result
